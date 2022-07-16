@@ -12,9 +12,17 @@
   </head>
 
   <body>
-    <div class="nav d-flex bg-dark text-white w-100">
-      <%= link_to "home", articles_path, class: "btn text-white" %>
-      <%= link_to "new article", new_article_path, class: "btn text-white" %>
+    <div class="nav d-flex bg-dark text-white w-100 justify-content-between">
+      <div>
+        <%= link_to "home", articles_path, class: "btn text-white" %>
+        <%= link_to "new article", new_article_path, class: "btn text-white" %>
+      </div>
+      <div>
+        <% if @article %>
+          <%= link_to "edit", edit_article_path(@article), class: "btn text-white" %>
+          <%= link_to "delete", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn text-white" %>
+        <% end %>
+      </div>
     </div>
 
     <div class="container d-flex flex-column align-items-center">
