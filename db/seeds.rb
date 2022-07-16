@@ -7,12 +7,17 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-100.times do
+30.times do
   f = Faker::Nation
-  Article.create(
+  p = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
+
+  Article.create!(
     title: f.capital_city,
-    content: "This is a city where people speak #{f.language}.
-         The national sport is #{f.national_sport}.
-         This city is famous for #{Faker::IndustrySegments.sub_sector}"
+    content: "This is a city where people speak #{f.language}. #{p}.
+
+    The national sport is #{f.national_sport}. #{p}
+
+    This city is famous for #{Faker::IndustrySegments.sub_sector}. #{p}
+    "
   )
 end
