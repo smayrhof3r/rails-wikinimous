@@ -1,0 +1,9 @@
+<%= form_for(article) do |f| %>
+<div class="d-flex flex-column align-items-end">
+<%= f.submit class: "btn btn-primary btn-sm mb-3"%>
+<%= f.text_field :title, placeholder:"title", class: "mb-3 form-control" %>
+
+
+<%= f.text_area :content, cols:80, rows:10, placeholder:"your article here", class: "form-control" %>
+</div>
+<% end %>

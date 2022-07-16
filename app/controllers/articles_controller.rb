@@ -16,26 +16,26 @@ class ArticlesController < ApplicationController
   def show
   end
 
-  def create
-
+  def new
+    @article = Article.new
   end
 
-  def new
-
+  def create
+    Article.create(article_params)
+    redirect_to articles_path, status: :see_other
   end
 
   def edit
-
   end
 
-
-
   def update
-
+    @article.update(article_params)
+    redirect_to article_path(@article)
   end
 
   def destroy
-
+    @article.destroy
+    redirect_to articles_path, status: :see_other
   end
 
   private

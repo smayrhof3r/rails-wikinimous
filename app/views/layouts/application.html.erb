@@ -18,7 +18,7 @@
         <%= link_to "new article", new_article_path, class: "btn text-white" %>
       </div>
       <div>
-        <% if @article %>
+        <% if @article && @article.persisted?%>
           <%= link_to "edit", edit_article_path(@article), class: "btn text-white" %>
           <%= link_to "delete", article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn text-white" %>
         <% end %>
