@@ -2,8 +2,9 @@
     <a href=<%=article_path(article)%> class = "text-decoration-none w-100">
       <div class="card mb-3 shadow w-100">
         <div class="card-body w-100">
-          <div class="card-title">
-            <%= article.title %>
+          <div class="card-title d-flex justify-content-between">
+            <div class="fs-4"><%= article.title %></div>
+            <div class="text-muted fs-6"><%= article.updated_at.strftime('%e %b, %Y') %></div>
           </div>
           <div class="card-text text-muted">
             <%= article.content[..200] %>...
