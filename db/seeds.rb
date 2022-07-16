@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+100.times do
+  f = Faker::Nation
+  Article.create(
+    title: f.capital_city,
+    content: "This is a city where people speak #{f.language}.
+         The national sport is #{f.national_sport}.
+         This city is famous for #{Faker::IndustrySegments.sub_sector}"
+  )
+end

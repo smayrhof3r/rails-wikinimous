@@ -1,0 +1,14 @@
+  <% @articles.each do |article| %>
+    <a href=<%=article_path(article)%> class = "text-decoration-none">
+      <div class="card mb-3 shadow w-100">
+        <div class="card-body">
+          <div class="card-title">
+            <%= article.title %>
+          </div>
+          <div class="card-text text-muted">
+            <%= article.content %>
+          </div>
+        </div>
+      </div>
+    </a>
+  <% end %>
